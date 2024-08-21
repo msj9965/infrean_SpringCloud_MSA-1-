@@ -2,12 +2,34 @@ spring:
   application:
     name:
       user-service
-  h2:
-    console:
-      enabled: true
-      settings:
-        web-allow-others: true
-      path: /h2-console
+#  h2:
+#    console:
+#      enabled: true
+#      settings:
+#        web-allow-others: true
+#      path: /h2-console
+#  datasource:
+#    driver-class-name: org.h2.Driver
+#    url: jdbc:h2:~/test
+#    username: sa
+#    password:
+#  jpa:
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.H2Dialect
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ecommerceDB
+    username: msj9965
+    password: h2108224@#
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 server:
   port: 0
 eureka:
