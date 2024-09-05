@@ -34,7 +34,13 @@ dependencies {
 	implementation 'org.modelmapper:modelmapper:3.1.1'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
-	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+	// JWT 토큰 생성을 위한 jjwt 라이브러리
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+
+	// JWT 라이브러리 사용을 위한 추가 dependencies (필수)
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5' // JSON 처리용 Jackson 사용
+
 	testImplementation 'org.springframework.security:spring-security-test'
 
 	compileOnly 'org.projectlombok:lombok'
